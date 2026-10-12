@@ -68,14 +68,14 @@
     .product-grid {
       display: grid;
       grid-template-columns: 1fr;
-      gap: 14px;
+      gap: 16px;
     }
 
     /* Карточка товара */
     .card {
       background: var(--card-bg);
-      border-radius: 16px;
-      padding: 16px;
+      border-radius: 18px;
+      padding: 14px;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
@@ -89,27 +89,38 @@
       transform: scale(0.98);
     }
 
+    /* Фотография товара */
+    .card-img {
+      width: 100%;
+      height: 190px;
+      object-fit: cover;
+      border-radius: 14px;
+      margin-bottom: 12px;
+      background-color: rgba(255, 255, 255, 0.03);
+    }
+
     .card-title {
       font-size: 16px;
       font-weight: 600;
-      margin-bottom: 6px;
+      margin-bottom: 4px;
     }
 
     .card-type {
-      font-size: 12px;
+      font-size: 13px;
       color: var(--hint-color);
-      margin-bottom: 12px;
+      margin-bottom: 14px;
+      line-height: 1.3;
     }
 
     .card-footer {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      margin-top: 10px;
+      margin-top: auto;
     }
 
     .card-price {
-      font-size: 18px;
+      font-size: 19px;
       font-weight: 700;
       color: #00d2ff;
     }
@@ -120,8 +131,8 @@
       background: var(--btn-grad);
       color: #fff;
       border: none;
-      padding: 10px 18px;
-      border-radius: 10px;
+      padding: 10px 22px;
+      border-radius: 12px;
       font-size: 14px;
       font-weight: 600;
       cursor: pointer;
@@ -133,6 +144,7 @@
 
     .buy-btn:active {
       transform: scale(0.92);
+      box-shadow: 0 2px 6px rgba(255, 75, 43, 0.2);
     }
 
     /* Переливающийся блик */
@@ -172,6 +184,7 @@
     .video-card {
       text-decoration: none;
       color: inherit;
+      padding: 16px;
     }
   </style>
 </head>
@@ -184,12 +197,13 @@
     <button class="tab-btn" onclick="switchTab('videos', this)">🎥 Обзоры</button>
   </div>
 
-  <!-- 1. Скрипты -->
+  <!-- 1. Скрипты (.jpg) -->
   <div id="tab-scripts" class="product-grid">
     <div class="card">
+      <img src="script1.jpg" alt="Быстрые размеры" class="card-img" onerror="this.style.display='none'">
       <div>
         <div class="card-title">Комплект скриптов: Быстрые размеры</div>
-        <div class="card-type">Автоматизация чертежей в Базисе</div>
+        <div class="card-type">Автоматизация простановки размеров в Базисе</div>
       </div>
       <div class="card-footer">
         <div class="card-price">600 ₽</div>
@@ -198,9 +212,10 @@
     </div>
 
     <div class="card">
+      <img src="script2.jpg" alt="Быстрый шкаф" class="card-img" onerror="this.style.display='none'">
       <div>
         <div class="card-title">Скрипт: Быстрый шкаф</div>
-        <div class="card-type">Параметрическое построение шкафов</div>
+        <div class="card-type">Параметрическое построение и расчет шкафов</div>
       </div>
       <div class="card-footer">
         <div class="card-price">1400 ₽</div>
@@ -209,9 +224,10 @@
     </div>
 
     <div class="card">
+      <img src="script3.jpg" alt="Текст со стрелкой" class="card-img" onerror="this.style.display='none'">
       <div>
         <div class="card-title">Скрипт: Текст со стрелкой</div>
-        <div class="card-type">Быстрые выносные надписи</div>
+        <div class="card-type">Быстрые выносные надписи и стрелки</div>
       </div>
       <div class="card-footer">
         <div class="card-price">400 ₽</div>
@@ -220,12 +236,13 @@
     </div>
   </div>
 
-  <!-- 2. 3D Модели -->
+  <!-- 2. 3D Модели (.jpeg) -->
   <div id="tab-models" class="product-grid hidden">
     <div class="card">
+      <img src="model1.jpeg" alt="Варочные поверхности" class="card-img" onerror="this.style.display='none'">
       <div>
         <div class="card-title">Варочные поверхности (БМ)</div>
-        <div class="card-type">База фурнитуры и фрагментов</div>
+        <div class="card-type">База фурнитуры и фрагментов с вырезами</div>
       </div>
       <div class="card-footer">
         <div class="card-price">600 ₽</div>
@@ -234,9 +251,10 @@
     </div>
 
     <div class="card">
+      <img src="model2.jpeg" alt="Духовые шкафы" class="card-img" onerror="this.style.display='none'">
       <div>
         <div class="card-title">Духовые шкафы (БМ)</div>
-        <div class="card-type">База фрагментов с анимацией</div>
+        <div class="card-type">База фрагментов с открыванием и анимацией</div>
       </div>
       <div class="card-footer">
         <div class="card-price">700 ₽</div>
@@ -245,9 +263,10 @@
     </div>
 
     <div class="card">
+      <img src="model3.jpeg" alt="Кофемашины встраиваемые" class="card-img" onerror="this.style.display='none'">
       <div>
         <div class="card-title">Кофемашины встраиваемые (БМ)</div>
-        <div class="card-type">Точные габариты и вырезы</div>
+        <div class="card-type">Точные габариты и посадочные вырезы</div>
       </div>
       <div class="card-footer">
         <div class="card-price">400 ₽</div>
@@ -256,9 +275,10 @@
     </div>
 
     <div class="card">
+      <img src="model4.jpeg" alt="СВЧ печи" class="card-img" onerror="this.style.display='none'">
       <div>
         <div class="card-title">СВЧ печи (БМ)</div>
-        <div class="card-type">Встраиваемые микроволновки</div>
+        <div class="card-type">Встраиваемые микроволновки для кухни</div>
       </div>
       <div class="card-footer">
         <div class="card-price">600 ₽</div>
@@ -267,6 +287,7 @@
     </div>
 
     <div class="card">
+      <img src="model5.jpeg" alt="Комплект кухонной техники" class="card-img" onerror="this.style.display='none'">
       <div>
         <div class="card-title">Комплект кухонной техники (БМ)</div>
         <div class="card-type">Полный набор всех моделей со скидкой</div>
@@ -278,9 +299,10 @@
     </div>
 
     <div class="card">
+      <img src="model6.jpeg" alt="Розетки и выключатели" class="card-img" onerror="this.style.display='none'">
       <div>
         <div class="card-title">Розетки и выключатели (БМ)</div>
-        <div class="card-type">Фрагменты для разметки фартука и стен</div>
+        <div class="card-type">Фрагменты для точной разметки стен и фартука</div>
       </div>
       <div class="card-footer">
         <div class="card-price">350 ₽</div>
